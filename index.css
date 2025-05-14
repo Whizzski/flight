@@ -18,7 +18,7 @@ body {
 
 .main-content {
   width: 100%;
-  padding: 20px;
+  padding: 15px;
 }
 
 .main-container {
@@ -32,6 +32,7 @@ body {
   max-width: 380px;
   width: 100%;
   margin: auto;
+  margin-bottom: 60px;
 }
 
 .input-group {
@@ -39,10 +40,12 @@ body {
   margin: 20px 0;
   width: 100%;
 }
-
+/* Ensure input and select elements are the same size on all devices */
 .input-group input,
 .input-group select {
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 14px 12px;
   border: none;
   border-radius: 10px;
@@ -50,6 +53,16 @@ body {
   background-color: #f1f0f4;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   outline: none;
+  appearance: none;
+}
+
+/* Responsive fix for mobile: make selects and inputs consistent */
+@media (max-width: 600px) {
+  .input-group input,
+  .input-group select {
+    font-size: 16px;
+    padding: 16px 12px;
+  }
 }
 
 .input-group label {
@@ -91,22 +104,21 @@ button#fly-btn:hover {
   box-shadow: 0 4px 12px rgba(42, 38, 45, 0.4);
 }
 
-/* footer.footer-container {
-  position: relative;
-  margin-top: 40px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(6px);
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  color: #2a262d;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  max-width: 380px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-} */
+  footer.footer-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #2a262d;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px 12px 0 0;
+  }
 
 .logo-container {
   text-align: center;
@@ -155,42 +167,6 @@ button#fly-btn:hover {
   text-align: center;
 }
 
-/* 📱 Mobile Fix: show info box on tap */
-.info-icon.active + .info-box {
-  display: block;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 480px) {
-  .main-container {
-    padding: 30px 20px;
-    border-radius: 30px;
-  }
-
-  button#fly-btn {
-    font-size: 14px;
-    padding: 10px 20px;
-  }
-
-  .info-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-
-  .info-box {
-    top: 70px;
-    max-width: 90%;
-    right: 5%;
-  }
-
-  footer.footer-container {
-    font-size: 12px;
-    padding: 10px;
-  }
-}
-
-
 .input-group select:valid + label {
   top: -8px;
   left: 10px;
@@ -199,3 +175,4 @@ button#fly-btn:hover {
   padding: 0 6px;
   border-radius: 4px;
 }
+
