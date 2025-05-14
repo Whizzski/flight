@@ -84,3 +84,7 @@ function sendFormEmail(formData) {
       throw error;
     });
 }
+
+const nights = document.getElementById('nights').value.trim();
+const season = document.getElementById('season').value.trim();
+const type = document.getElementById('type').value.trim();
