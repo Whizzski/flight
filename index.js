@@ -57,9 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.toggleInfo = () => {
-    const infoBox = document.getElementById('infoBox');
-    infoBox.style.display = infoBox.style.display === 'block' ? 'none' : 'block';
-  };
+  const icon = document.querySelector('.info-icon');
+  const box = document.getElementById('infoBox');
+  icon.classList.toggle('active');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+};
 });
 
 function sendFormEmail(formData) {
